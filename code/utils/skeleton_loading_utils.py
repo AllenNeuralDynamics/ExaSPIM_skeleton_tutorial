@@ -219,7 +219,7 @@ def get_skeleton_ids(key, data_root):
 
     """
     path = f"{data_root}/{key}/skeleton/"
-    return [int(f) for f in os.listdir(path) if f.isnumeric()]
+    return list(np.sort([int(f) for f in os.listdir(path) if f.isnumeric()]))
 
 
 def get_skeleton(cv_dataset, skel_id):
